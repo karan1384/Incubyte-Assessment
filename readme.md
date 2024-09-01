@@ -38,6 +38,7 @@ Follow the instructions to get the project running on your local machine for dev
 3. (Optional) Create a virtual environment to manage dependencies (For Windows):
 
    ```
+   pip install virtualenv
    virtualenv env
    cd scripts\
    activate
