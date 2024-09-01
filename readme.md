@@ -40,7 +40,8 @@ Follow the instructions to get the project running on your local machine for dev
    ```
    pip install virtualenv
    virtualenv env
-   cd scripts\
+   cd env\
+   cd scripts
    activate
    cd..
    cd..
