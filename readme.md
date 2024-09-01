@@ -68,12 +68,14 @@ Follow the instructions to get the project running on your local machine for dev
 
 To ensure the reliability of the navigation system, unit tests are provided. To run these tests:
 
-```  pytest
+```
+pytest
  ```
 
 For detailed information about each test:
 
-```  pytest -v -rP
+```
+pytest -v -rP
  ```
 
 
