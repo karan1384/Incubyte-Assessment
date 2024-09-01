@@ -89,3 +89,75 @@ class Library:
         # Returns a list of all books in the library, regardless of availability.
         return list(self.books.values())
 
+
+# To Perform this Library Management System
+def main():
+    library = Library()
+
+    while True:
+        print("\nLibrary Management System")
+        print("1. Add a book")
+        print("2. Borrow a book")
+        print("3. Return a book")
+        print("4. View available books")
+        print("5. View all books")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            isbn = input("Enter ISBN: ")
+            title = input("Enter title: ")
+            author = input("Enter author: ")
+            year = int(input("Enter publication year: "))
+            book = Book(isbn=isbn, title=title, author=author, publication_year=year)
+            try:
+                library.add_book(book)
+                print(f"Book '{title}' added successfully!")
+            except ValueError as e:
+                print(e)
+
+        elif choice == '2':
+            isbn = input("Enter ISBN of the book to borrow: ")
+            try:
+                library.borrow_book(isbn)
+                print(f"Book with ISBN '{isbn}' borrowed successfully!")
+            except (KeyError, BookNotAvailableError) as e:
+                print(e)
+
+        elif choice == '3':
+            isbn = input("Enter ISBN of the book to return: ")
+            try:
+                library.return_book(isbn)
+                print(f"Book with ISBN '{isbn}' returned successfully!")
+            except KeyError as e:
+                print(e)
+
+        elif choice == '4':
+            available_books = library.view_available_books()
+            if available_books:
+                print("\nAvailable Books:")
+                for book in available_books:
+                    print(book)
+            else:
+                print("No books available.")
+
+        elif choice == '5':
+            all_books = library.view_all_books()
+            if all_books:
+                print("\nAll Books in Library:")
+                for book in all_books:
+                    print(book)
+            else:
+                print("No books in the library.")
+
+        elif choice == '6':
+            print("Exiting the program. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
