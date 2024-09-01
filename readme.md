@@ -35,7 +35,7 @@ Follow the instructions to get the project running on your local machine for dev
    cd Incubyte-Assessment
    ```
 
-3. (Optional) Create a virtual environment to manage dependencies:
+3. (Optional) Create a virtual environment to manage dependencies (For Windows):
 
    ```
    virtualenv env
